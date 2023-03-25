@@ -6,7 +6,7 @@ import yfinance as yf
 def line(start, end, ticker):
     plt.date_form('d/m/Y')
     start = plt.string_to_datetime(start)
-    end = plt.today_datetime()
+    end = plt.string_to_datetime(end)
     data = yf.download(str(ticker), start, end)
 
     prices = list(data["Close"])

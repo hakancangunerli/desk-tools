@@ -13,5 +13,5 @@ def test():
     if args[4] == 'line':
         line(args[1], args[2], args[3])
     if args[4] == 'candlestick':
-        candlestick(args[1], args[2], args[3])
+        candlestick(args[1], args[2],args[3])
 test()
