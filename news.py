@@ -1,9 +1,21 @@
-
-from bs4 import BeautifulSoup
-from urllib.request import urlopen, Request
 url = 'https://finviz.com/news.ashx'
 
 # the table is at div class = news 
+import importlib
+packages = ['bs4', 'urllib.request', 'subprocess']
+
+for package in packages:
+    try:
+        importlib.import_module(package)
+    except ImportError:
+        print(f"{package} not found, installing...")
+        subprocess.call(['pip', 'install', package])
+
+print("Check complete")
+        
+from bs4 import BeautifulSoup
+from urllib.request import urlopen, Request
+
 
 def news():
     req = Request(url=url,headers={'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0'}) 
@@ -19,8 +31,3 @@ def news():
     # print the first 10 rows of the table, if it says loading, then don't show that tr and td
     for i in range(10):
           print(table.find_all('tr')[i].find_all('td')[1].text, table.find_all('tr')[i].find_all('td')[2].text)  
-            
-    
-    
-    
-news()
