@@ -13,6 +13,7 @@ print("Checking for package/code updates...")
 
 from plots import line, candlestick
 from news import news
+from ticker_finder import get_ticker
 
 def main():
     while True:
@@ -25,6 +26,10 @@ def main():
         if 'news' in args:
             news()            
 
+        if 'tf' in args:
+            ticker_to_find = input("Enter the company name: ")
+            print(get_ticker(ticker_to_find))
+            
         if 'help' in args:
             # which command do you need help with question? 
             print("which command do you need help with?")
