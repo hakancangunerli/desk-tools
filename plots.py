@@ -1,8 +1,6 @@
-import importlib
-
-
 packages = ['quantstats', 'plotext', 'yfinance', 'importlib']
-
+import importlib
+import subprocess
 for package in packages:
     try:
         importlib.import_module(package)
