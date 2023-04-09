@@ -1,5 +1,5 @@
 # terminal-terminal
-finance stuff through terminal
+simple finance stuff through terminal 
 
 ## Packages used
 
