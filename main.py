@@ -15,6 +15,8 @@ from plots import line, candlestick
 from news import news
 from ticker_finder import get_ticker
 from info import get_info
+from market import market
+
 
 def main():
     while True:
@@ -26,6 +28,9 @@ def main():
         
         if 'news' in args:
             news()            
+        
+        if 'market' in args:
+            market()
 
         if 'tf' in args:
             ticker_to_find = input("Enter the company name: ")
