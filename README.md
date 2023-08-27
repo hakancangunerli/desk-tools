@@ -1,5 +1,5 @@
-# terminal-terminal
-simple finance stuff through terminal 
+# desk-tools
+the desktop tools i use for simple day-to-day information
 
 ## Packages used
 
