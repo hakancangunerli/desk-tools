@@ -1,18 +1,6 @@
-packages = ['quantstats', 'plotext', 'yfinance', 'importlib']
-import importlib
-import subprocess
-for package in packages:
-    try:
-        importlib.import_module(package)
-    except ImportError:
-        print(f"{package} not found, installing...")
-        subprocess.call(['pip', 'install', package])
-
 import quantstats as qs 
 import plotext as plt
 import yfinance as yf
-
-
 
 def line(start, end, ticker):
     plt.date_form('d/m/Y')
